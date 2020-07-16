@@ -1,0 +1,148 @@
+$primary-color: #263238;
+$input-background: #eee;
+$line-color: #e8e8e8;
+$gray-background: #f5f5f5;
+$link-color: #0034a6;
+$warning-color: #8e0000;
+
+.base-date-picker {
+  margin-bottom: 24px;
+  position: relative;
+
+  &__input-wrap {
+    width: 100%;
+  }
+
+  &__input-position-wrap {
+    position: relative;
+  }
+
+  &__icon-calendar {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+    cursor: pointer;
+
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  &__input {
+    opacity: 1 !important;
+
+    .react-datepicker-input {
+      height: 40px;
+      border: 0;
+      background: #fff;
+
+      &:hover,
+      &.is-open {
+        border: 0;
+        background: #fff;
+      }
+      
+      &.is-open {
+        input {
+          border-bottom: 2px solid #1e61b8 !important;
+        }
+      }
+    }
+
+    .react-datepicker-top {
+      border-top: 1px solid $primary-color !important;
+      border-right: 1px solid $primary-color !important;
+      border-left: 1px solid $primary-color !important;
+      background: $primary-color !important;
+
+      &::after {
+        border-bottom-color: $primary-color !important;
+      }
+    }
+  }
+
+  .is-disabled {
+    input {
+      background-color: #e9eef2 !important;
+    }
+  }
+
+  input {
+    padding: 8px 32px 8px 12px !important;
+    border: 1px solid #e8e8e8 !important;
+    border-bottom: 2px solid #e8e8e8 !important;
+    border-radius: 4px !important;
+    outline: none !important;
+    background: #fff;
+    font-size: 15px !important;
+    font-weight: normal !important;
+    box-shadow: none !important;
+
+    &:focus {
+      border-bottom: 2px solid $link-color !important;
+    }
+
+    &::placeholder {
+      font-weight: normal !important;
+    }
+  }
+
+  &__fields-error {
+    position: absolute;
+    bottom: -22px;
+    width: 100%;
+    padding-left: 12px;
+    font-size: 14px;
+    color: #d33a2c !important;
+  }
+
+  &__label {
+    height: 20px;
+    margin-bottom: 4px;
+    padding-left: 12px;
+    color: #1d2a3a !important;
+    font-size: 15px !important;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &--left {
+      margin-right: 8px;
+      padding-left: 0px;
+    }
+
+    span {
+      color: #d33a2c;
+    }
+  }
+
+  &--error {
+
+    .react-datepicker-input {
+      input {
+        border: 1px solid #d33a2c !important;
+        border-bottom: 2px solid #d33a2c !important;
+  
+        &:focus {
+          border: 1px solid #d33a2c !important;
+          border-bottom: 2px solid #d33a2c !important;
+        }
+      }
+      
+      &.is-open {
+        input {
+          border-bottom: 2px solid #d33a2c !important;
+        }
+      }
+    }
+  }
+
+  &__text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
